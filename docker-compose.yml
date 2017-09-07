@@ -8,8 +8,6 @@ services:
       - ./php-fpm/www.conf:/usr/local/etc/php-fpm.d/zz-www.conf
       - /var/run/php-fpm
       - ./php-fpm/php.ini:/usr/local/etc/php/conf.d/php.ini
-    ports:
-      - 9000:9000
 
   # Web
   web:
