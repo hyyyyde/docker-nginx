@@ -1,0 +1,21 @@
+version: '2'
+services:
+  # nginx proxy確認用にphp-fpmを立ち上げる
+  application:
+    image: hyyyyde/php-fpm:1.0.0
+    volumes:
+      - ./web:/var/www/html/web
+      - ./php-fpm/www.conf:/usr/local/etc/php-fpm.d/zz-www.conf
+      - /var/run/php-fpm
+
+  # Web
+  web:
+    build:
+      context: .
+    image: hyyyyde/nginx:1.0.0
+#    volumes:
+#      - ./web:/var/www/html/web
+    volumes_from:
+      - application
+    ports:
+      - 80:80
