@@ -14,8 +14,6 @@ services:
     build:
       context: .
     image: hyyyyde/nginx:1.0.0
-#    volumes:
-#      - ./web:/var/www/html/web
     volumes_from:
       - application
     ports:
