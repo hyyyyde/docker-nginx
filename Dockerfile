@@ -1,6 +1,6 @@
 FROM nginx:1.13
 
-LABEL maintainer "hyyyyde <hyyyyde@gmail.com>"
+LABEL maintainer "hyyyyde"
 
 # 時刻はJST
 RUN apt-get update \
